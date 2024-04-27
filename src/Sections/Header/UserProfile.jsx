@@ -1,10 +1,12 @@
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import React from "react";
 import {
     Drawer,
     Button,
+    Tooltip,
+   
 
 } from "@material-tailwind/react";
 import toast, { Toaster } from 'react-hot-toast';
@@ -15,15 +17,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 const UserProfile = () => {
     const { LogOut, user } = useContext(AuthContext);
     const [openRight, setOpenRight] = React.useState(false);
-    const [hoverText, setHoverText] = useState('');
-
-    const handleMouseOver = (text) => {
-        setHoverText(text);
-    };
-
-    const handleMouseLeave = () => {
-        setHoverText('');
-    };
+   
     const openDrawerRight = () => setOpenRight(true);
     const closeDrawerRight = () => setOpenRight(false);
     const handleLogOut = () => {
@@ -34,12 +28,15 @@ const UserProfile = () => {
         <div>
             <React.Fragment>
                 <div className="flex">
-                    <Button onClick={openDrawerRight} className={`w-12 h-12 rounded-full  dark:bg-gray-500 p-1 `} onMouseOver={() => handleMouseOver(`${user.displayName}`)} onMouseLeave={handleMouseLeave}>
+                    <Tooltip content={`${user.displayName}`}>
+                        <Button onClick={openDrawerRight} className={`w-12 h-12 rounded-full  dark:bg-gray-500 p-1 `}>
 
-                        {user?.photoURL ? <div className="w-12 h-12 rounded-full bg-cover -mt-[5px] -ml-[5px] " style={{ backgroundImage: `url(${user.photoURL})` }} ></div> : <FaCircleUser className="text-5xl -mt-[5.5px] -ml-[5px]" />}
+                            {user?.photoURL ? <div className="w-12 h-12 rounded-full bg-cover -mt-[5px] -ml-[5px] " style={{ backgroundImage: `url(${user.photoURL})` }} ></div> : <FaCircleUser className="text-5xl -mt-[5.5px] -ml-[5px]" />}
 
-                    </Button>
-                    {hoverText && <span style={{ position: 'absolute', backgroundColor: 'lightgray', padding: '5px' }}>{hoverText}</span>}
+                        </Button>
+                    </Tooltip>
+                   
+                  
                     <Button onClick={handleLogOut} className="ml-4 hidden md:block">Log Out</Button>
                 </div>
                 <Toaster

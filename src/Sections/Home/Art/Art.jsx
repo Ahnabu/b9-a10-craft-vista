@@ -1,13 +1,16 @@
+/* eslint-disable react/prop-types */
 import {
     Card,
     CardHeader,
     CardBody,
+    CardFooter,
     Typography,
-    Avatar,
+   
 } from "@material-tailwind/react";
 
-
-const Art = ({ data }) => {
+import { IoMdPricetag } from "react-icons/io";
+import { FaRegStar } from "react-icons/fa";
+const Art = ({ art }) => {
     const { image_url,
         item_name,
         subcategory_Name,
@@ -18,42 +21,48 @@ const Art = ({ data }) => {
         processing_time,
         stockStatus,
         User_Email,
-        User_Name, } = data
-    console.log('hello art');
+        User_Name, } = art
+   
+   
     return (
-        <div>
+        <div className="mx-auto">
 
-            <Card
-                shadow={false}
-                className="relative grid h-[40rem] w-full max-w-[28rem] items-end justify-center overflow-hidden text-center"
-            >
+            <Card className="max-w-[24rem] overflow-hidden ">
                 <CardHeader
                     floated={false}
                     shadow={false}
                     color="transparent"
-                    className="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center"
+                    className="m-0 rounded-none"
                 >
-                    <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
-                </CardHeader>
-                <CardBody className="relative py-14 px-6 md:px-12">
-                    <Typography
-                        variant="h2"
-                        color="white"
-                        className="mb-6 font-medium leading-[1.5]"
-                    >
-                        How we design and code open-source projects?
-                    </Typography>
-                    <Typography variant="h5" className="mb-4 text-gray-400">
-                        Tania Andrew
-                    </Typography>
-                    <Avatar
-                        size="xl"
-                        variant="circular"
-                        alt="tania andrew"
-                        className="border-2 border-white"
-                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                    <div
+                        // src={`${image_url}`}
+                        style={{ backgroundImage: `url(${image_url})` }}
+                        alt=""
+                        className="bg-cover object-cover h-[240px] "
                     />
+                </CardHeader>
+                <CardBody>
+                    <Typography variant="h4" color="blue-gray">
+                        {item_name}
+                    </Typography>
+                    <Typography variant="lead" color="gray" className="mt-3 font-normal">
+                        {subcategory_Name}
+                    </Typography>
                 </CardBody>
+                <CardFooter className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                        <div>
+                            <IoMdPricetag /> {price}
+                        </div>
+                        <div>
+                            {stockStatus}
+                        </div>
+                    
+                    </div>
+                    <Typography className="font-normal">
+                        <FaRegStar /> {rating}
+                    </Typography>
+                </CardFooter>
             </Card>
 
         </div>

@@ -25,12 +25,15 @@ const Home = () => {
             {
                 arts.length
             }
-            {
-                arts.map(data => {
-                    console.log(data);
-                  <Art data={data}></Art>
-                })
-          }
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto justify-around gap-5 text-center">
+                {
+                    arts.map(art => {
+                       
+                        return (<Art art={art} key={art._id}></Art>)
+                    })
+                }
+            </div>
+           
             
         </div>
     );
