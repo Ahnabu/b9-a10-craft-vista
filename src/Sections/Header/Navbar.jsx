@@ -44,11 +44,25 @@ export function StickyNavbar() {
                 color="text-black"
                 className="p-1 font-normal"
             >
-                <NavLink to={'/addArt'} className={({ isActive, isPending }) =>
+              
+                <NavLink to={'/allArt'} className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? " p-2 underline font-bold text-blue-gray" : "text-black"
+                } >
+                    All Art & Craft
+                 </NavLink>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="text-black"
+                className="p-1 font-normal"
+            >
+                <NavLink to={'/add'} className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? " p-2 underline font-bold text-blue-gray" : "text-black"
                 } >
                     Add Art & Craft
                  </NavLink>
+                
             </Typography>
             <Typography
                 as="li"

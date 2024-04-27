@@ -8,6 +8,7 @@ import LogIn from "../Sections/Authentication/LogIn/Login";
 import Error from "../Error/Error";
 import AddArt from "../Sections/AddArt/AddArt";
 import PrivetRoute from "./PrivetRoute";
+import AllArt from "../Sections/Home/AllArt/AllArt";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,13 @@ export const router = createBrowserRouter([
                 path: "/add",
                 element: <PrivetRoute>
                     <AddArt></AddArt>
+                </PrivetRoute> ,
+
+            },
+            {
+                path: "/allArt",
+                element: <PrivetRoute>
+                    <AllArt></AllArt>
                 </PrivetRoute> ,
 
             },

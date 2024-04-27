@@ -2,8 +2,11 @@
 import { useContext } from "react";
 
 import { useLocation, Navigate } from 'react-router-dom';
-import { Spinner } from "@material-tailwind/react";
+
 import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
+
+import Lottie from "lottie-react";
+import animation from './animation.json'
 const PrivetRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation();
@@ -11,7 +14,8 @@ const PrivetRoute = ({ children }) => {
     const form = location?.pathname || '/'
     if (loading) {
         return <div className="w-full items-center text-center">
-            <Spinner className="h-16 w-16 text-gray-900/50 text-center" />
+           
+            <Lottie animationData={animation} className="h-24 w-24 text-gray-900/50 text-center mx-auto" />
         </div>
     }
     if (!user) {

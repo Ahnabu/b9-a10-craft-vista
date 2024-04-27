@@ -16,7 +16,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 // day picker
 
-
+import Swal from 'sweetalert2'
 // @heroicons/react
 
 const AddArt = () => {
@@ -63,6 +63,12 @@ const AddArt = () => {
                 console.log(
                     data
                 );
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Successfully added to database',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
                 setState(!state)
             })
     }
