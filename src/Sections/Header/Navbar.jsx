@@ -44,11 +44,11 @@ export function StickyNavbar() {
                 color="text-black"
                 className="p-1 font-normal"
             >
-                <NavLink to={'/update-profile'} className={({ isActive, isPending }) =>
+                <NavLink to={'/addArt'} className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? " p-2 underline font-bold text-blue-gray" : "text-black"
                 } >
-                    Update Profile
-                </NavLink>
+                    Add Art & Craft
+                 </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -85,7 +85,7 @@ export function StickyNavbar() {
 
                         className="mr-4 cursor-pointer py-1.5 text-3xl font-bold"
                     >
-                        Dwell-Well
+                        CraftVista
                     </Typography>
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block text-black">{navList}</div>

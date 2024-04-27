@@ -82,7 +82,7 @@ function Register() {
     return (
         <div className="w-full mx-auto mt-6 ">
             <Helmet>
-                <title>Dwell-well || Register</title>
+                <title>CraftVista || Register</title>
             </Helmet>
             <Card color="transparent" className="mx-auto w-80 md:w-[440px] sm:p-6  md:p-8 bg-gray-100" >
                 <Typography variant="h4" color="blue-gray">

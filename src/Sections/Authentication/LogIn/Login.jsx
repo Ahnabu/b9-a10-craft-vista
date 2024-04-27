@@ -42,7 +42,7 @@ function LogIn() {
     return (
         <div className="w-full mx-auto mt-6 ">
             <Helmet>
-                <title>Dwell-well || LogIn</title>
+                <title>CraftVista || LogIn</title>
             </Helmet>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 mx-auto dark:text-gray-800">
                 <h1 className="text-2xl font-bold text-center">Login</h1>

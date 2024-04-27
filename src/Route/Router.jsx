@@ -6,6 +6,8 @@ import Home from "../Sections/Home/Home";
 import Register from "../Sections/Authentication/Register/Register";
 import LogIn from "../Sections/Authentication/LogIn/Login";
 import Error from "../Error/Error";
+import AddArt from "../Sections/AddArt/AddArt";
+import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +28,13 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>,
+
+            },
+            {
+                path: "/add",
+                element: <PrivetRoute>
+                    <AddArt></AddArt>
+                </PrivetRoute> ,
 
             },
         ]
