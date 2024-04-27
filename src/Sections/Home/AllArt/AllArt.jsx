@@ -16,6 +16,7 @@ const AllArt = () => {
     }, [state])
     return (
         <div>
+            <h1 className="text-center my-2">All Art and Crafts</h1>
             <table className="custom-table">
                 <thead>
                     <tr>
@@ -36,7 +37,7 @@ const AllArt = () => {
                             <td>{item.price}</td>
                             <td>{item.stockStatus}</td>
                             <td>{item.rating}</td>
-                            <td><Link to={'/details'}><Button>View Details</Button> </Link>  </td>
+                            <td><Link to={`/details/${item._id}`}><Button>View Details</Button> </Link>  </td>
                         </tr>
                     ))}
                 </tbody>

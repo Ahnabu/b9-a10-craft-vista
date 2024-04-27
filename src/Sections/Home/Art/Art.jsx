@@ -11,18 +11,19 @@ import {
 
 import { IoMdPricetag } from "react-icons/io";
 import { FaRegStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Art = ({ art }) => {
     const { image_url,
         item_name,
         subcategory_Name,
-        short_description,
+      
         price,
         rating,
         customization,
-       processing_time, 
+      
         stockStatus,
-        User_Email,
-        User_Name, } = art
+        _id,
+        } = art
    
    
     return (
@@ -68,7 +69,8 @@ const Art = ({ art }) => {
                         <FaRegStar /> {rating}
                     </Typography>
                 </CardFooter>
-                <Button>View Details</Button>
+
+                <Link to={`/details/${_id}`}><Button>View Details</Button> </Link>
             </Card>
 
         </div>

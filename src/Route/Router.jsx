@@ -9,6 +9,7 @@ import Error from "../Error/Error";
 import AddArt from "../Sections/AddArt/AddArt";
 import PrivetRoute from "./PrivetRoute";
 import AllArt from "../Sections/Home/AllArt/AllArt";
+import Details from "../Sections/Home/Details/Details";
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
 
             },
             {
-                path: "/add",
+                path: "/addArt",
                 element: <PrivetRoute>
                     <AddArt></AddArt>
                 </PrivetRoute> ,
@@ -44,6 +45,14 @@ export const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <AllArt></AllArt>
                 </PrivetRoute> ,
+
+            },
+            {
+                path: "/details/:id",
+                element: <PrivetRoute>
+                    <Details></Details>
+                </PrivetRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
 
             },
         ]
