@@ -5,6 +5,7 @@ import {
     CardBody,
     CardFooter,
     Typography,
+    Button,
    
 } from "@material-tailwind/react";
 
@@ -18,7 +19,7 @@ const Art = ({ art }) => {
         price,
         rating,
         customization,
-        processing_time,
+       processing_time, 
         stockStatus,
         User_Email,
         User_Name, } = art
@@ -27,7 +28,7 @@ const Art = ({ art }) => {
     return (
         <div className="mx-auto">
 
-            <Card className="max-w-[24rem] overflow-hidden ">
+            <Card className="max-w-[24rem]  ">
                 <CardHeader
                     floated={false}
                     shadow={false}
@@ -38,31 +39,36 @@ const Art = ({ art }) => {
                         // src={`${image_url}`}
                         style={{ backgroundImage: `url(${image_url})` }}
                         alt=""
-                        className="bg-cover object-cover h-[240px] "
+                        className="bg-cover object-cover h-[240px] w-[24rem]"
                     />
                 </CardHeader>
                 <CardBody>
                     <Typography variant="h4" color="blue-gray">
                         {item_name}
                     </Typography>
-                    <Typography variant="lead" color="gray" className="mt-3 font-normal">
+                    <Typography variant="lead" color="gray" className="mt-2 font-normal">
                         {subcategory_Name}
                     </Typography>
-                </CardBody>
-                <CardFooter className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div>
-                            <IoMdPricetag /> {price}
+                    <div className="flex items-center justify-between">
+                        <div className="flex gap-1">
+                            <IoMdPricetag /> {price} $
                         </div>
                         <div>
                             {stockStatus}
                         </div>
-                    
+
                     </div>
-                    <Typography className="font-normal">
+                </CardBody>
+                <CardFooter className="flex items-center justify-between">
+                   
+                    <Typography className="font-normal flex gap-1">
+                       Customizable: {customization}
+                    </Typography>
+                    <Typography className="font-normal flex gap-1">
                         <FaRegStar /> {rating}
                     </Typography>
                 </CardFooter>
+                <Button>View Details</Button>
             </Card>
 
         </div>

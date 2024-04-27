@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
-import Slider from "../Header/Slider";
+import Slider from "../Header/Slider/Slider";
 import Art from "./Art/Art";
 
 
@@ -20,12 +20,10 @@ const Home = () => {
  
     return (
         
-        <div>
+        <div className="h-full">
             <Slider></Slider>
-            {
-                arts.length
-            }
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto justify-around gap-5 text-center">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto justify-around gap-5 text-center mt-6">
                 {
                     arts.map(art => {
                        

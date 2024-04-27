@@ -6,7 +6,7 @@ import { StickyNavbar } from "../Sections/Header/Navbar";
 
 const Layout = () => {
     return (
-        <div className="max-w-1280px mx-auto">
+        <div className="max-w-1280px mx-auto ">
             <StickyNavbar></StickyNavbar>
             <Outlet></Outlet>
             <Footer></Footer>
