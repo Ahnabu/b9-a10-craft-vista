@@ -17,7 +17,6 @@ import UserProfile from "./UserProfile";
 export function StickyNavbar() {
     const [openNav, setOpenNav] = React.useState(false);
     const { user } = useContext(AuthContext)
-    console.log(user);
     React.useEffect(() => {
         window.addEventListener(
             "resize",

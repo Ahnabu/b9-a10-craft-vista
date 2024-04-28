@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <MyList></MyList>
                 </PrivetRoute>,
-                loader: ({params}) =>()=> {return fetch(`http://localhost:5000/details/${params.email}`)}
+                loader: ({ params }) => () => { return fetch(`http://localhost:5000/myArt/${params.email}`)}
 
             },
         ]
