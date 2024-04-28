@@ -14,7 +14,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import UserProfile from "./UserProfile";
 import ThemeToggle from "../Theme/Theme";
-
+import ToggleText from './Text/Text'
 
 
 export function StickyNavbar() {
@@ -118,6 +118,7 @@ export function StickyNavbar() {
                     >
                         CraftVista
                     </Typography>
+                    <ToggleText></ToggleText>
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block text-black">{navList}</div>
                         {user ? <UserProfile></UserProfile> : <div className="flex items-center gap-x-1">
