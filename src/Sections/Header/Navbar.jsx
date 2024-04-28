@@ -17,6 +17,7 @@ import UserProfile from "./UserProfile";
 export function StickyNavbar() {
     const [openNav, setOpenNav] = React.useState(false);
     const { user } = useContext(AuthContext)
+    console.log(user);
     React.useEffect(() => {
         window.addEventListener(
             "resize",
@@ -61,6 +62,19 @@ export function StickyNavbar() {
                     isPending ? "pending" : isActive ? " p-2 underline font-bold text-blue-gray" : "text-black"
                 } >
                     Add Art & Craft
+                 </NavLink>
+                
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="text-black"
+                className="p-1 font-normal"
+            >
+                <NavLink to={`/myArt/${user?.email}`} className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? " p-2 underline font-bold text-blue-gray" : "text-black"
+                } >
+                    My Art & Craft
                  </NavLink>
                 
             </Typography>

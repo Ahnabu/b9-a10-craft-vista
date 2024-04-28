@@ -6,26 +6,26 @@ import {
     CardFooter,
     Typography,
     Button,
-   
+
 } from "@material-tailwind/react";
 
 import { IoMdPricetag } from "react-icons/io";
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-const Art = ({ art }) => {
+const MyAll = ({ art }) => {
     const { image_url,
         item_name,
         subcategory_Name,
-      
+
         price,
         rating,
         customization,
-      
+
         stockStatus,
         _id,
-        } = art
-   
-   
+    } = art
+
+
     return (
         <div className="mx-auto">
 
@@ -61,23 +61,25 @@ const Art = ({ art }) => {
                     </div>
                 </CardBody>
                 <CardFooter className="flex items-center justify-between">
-                   
+
                     <Typography className="font-normal flex gap-1">
-                       Customizable: {customization}
+                        Customizable: {customization}
                     </Typography>
                     <Typography className="font-normal flex gap-1">
                         <FaRegStar /> {rating}
                     </Typography>
-                    
+
                 </CardFooter>
-                <div className="my-2">
+                <div className="my-2 flex gap-3 justify-around">
                     <Link to={`/details/${_id}`}><Button>View Details</Button> </Link>
-</div>
-               
+                    <Link to={`/update/${_id}`}><Button>Update</Button> </Link>
+                    <Link to={`/delete/${_id}`}><Button>Delete</Button> </Link>
+                </div>
+
             </Card>
 
         </div>
     );
 };
 
-export default Art;
+export default MyAll;
