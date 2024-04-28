@@ -8,6 +8,11 @@ export default withMT({
   ],
   theme: {
     extend: {},
+    daisyui: {
+      themes: ["light", "dark", "cupcake"],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui')
+  ],
 });

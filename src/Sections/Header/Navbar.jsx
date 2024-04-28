@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import {
     Navbar,
     MobileNav,
@@ -13,6 +13,9 @@ import { Link, NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import UserProfile from "./UserProfile";
+import ThemeToggle from "../Theme/Theme";
+
+
 
 export function StickyNavbar() {
     const [openNav, setOpenNav] = React.useState(false);
@@ -23,6 +26,7 @@ export function StickyNavbar() {
             () => window.innerWidth >= 960 && setOpenNav(false),
         );
     }, []);
+   
 
     const navList = (
         <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 font-semibold  ">
@@ -180,6 +184,7 @@ export function StickyNavbar() {
                                 </svg>
                             )}
                         </IconButton>
+                      <ThemeToggle></ThemeToggle>
                     </div>
                 </div>
                 <MobileNav open={openNav}>
@@ -201,6 +206,7 @@ export function StickyNavbar() {
 
                     </div>
                 </MobileNav>
+                
             </Navbar>
 
         </div>

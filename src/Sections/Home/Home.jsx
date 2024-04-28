@@ -21,6 +21,7 @@ const Home = () => {
             setArts(data)
         })
     }, [link, state])
+    
  
     return (
         
@@ -47,10 +48,10 @@ const Home = () => {
 
                     <span className="font-semibold ">Scrapbooking</span>
                 </p>
-                <p  onClick={() => { setTab(3), setLink('Paper Quilling & origami') }}
+                <p  onClick={() => { setTab(3), setLink('Paper Quilling & Origami') }}
                     className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab === 3 ? 'border border-b-0' : 'border-b '} dark:border-gray-900 dark:text-gray-600 `} >
 
-                    <span className="font-semibold ">Paper Quilling & origami</span>
+                    <span className="font-semibold ">Paper Quilling & Origami</span>
                 </p>
                 <p  onClick={() => { setTab(4), setLink('Glass Painting') }}
                     className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab === 4 ? 'border border-b-0' : 'border-b '} dark:border-gray-900 dark:text-gray-600 `} >
