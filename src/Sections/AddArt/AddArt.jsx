@@ -60,16 +60,17 @@ const AddArt = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(
-                    data
-                );
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Successfully added to database',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                })
-                setState(!state)
+                if (data.updatedId>0) {
+                   
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Successfully added to database',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    setState(!state)
+                }
+               
             })
     }
 

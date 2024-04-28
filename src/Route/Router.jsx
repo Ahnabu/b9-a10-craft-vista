@@ -11,6 +11,7 @@ import PrivetRoute from "./PrivetRoute";
 import AllArt from "../Sections/Home/AllArt/AllArt";
 import Details from "../Sections/Home/Details/Details";
 import MyList from "../Sections/Home/MyList/MyList";
+import Update from "../Sections/UpdateArt/Update";
 
 export const router = createBrowserRouter([
     {
@@ -61,7 +62,15 @@ export const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <MyList></MyList>
                 </PrivetRoute>,
-                loader: ({ params }) => () => { return fetch(`http://localhost:5000/myArt/${params.email}`)}
+                loader: ({ params }) => () => { return fetch(`http://localhost:5000/myArt/${params.email}`) }
+
+            },
+            {
+                path: "/update/:id",
+                element: <PrivetRoute>
+                    <Update></Update>
+                </PrivetRoute>,
+                loader: ({ params }) => () => { return fetch(`http://localhost:5000/update/${params.id}`) }
 
             },
         ]

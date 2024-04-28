@@ -3,7 +3,7 @@ import { Typography } from "@material-tailwind/react";
 
 const Details = () => {
     const art = useLoaderData();
-    console.log(art);
+   
     const { image_url,
         item_name,
         subcategory_Name,
