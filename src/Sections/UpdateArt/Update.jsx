@@ -24,7 +24,7 @@ const Update = () => {
     const { user, setState, state } = useContext(AuthContext)
     const [art, setArt] = useState([])
     const {id} = useParams()
-    console.log(id);
+    
     useEffect(() => {
         fetch(`http://localhost:5000/details/${id}`)
             .then(res => res.json())
@@ -41,10 +41,9 @@ const Update = () => {
         customization,
         processing_time,
         stockStatus,
-        User_Email,
-        User_Name,
+        
     } = art
-console.log(art);
+
     const handleAdd = e => {
         e.preventDefault();
         console.log('connected');
@@ -72,9 +71,9 @@ console.log(art);
             User_Email,
             User_Name,
         }
-        console.log(info);
+      
         fetch('http://localhost:5000/addArt', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -91,6 +90,7 @@ console.log(art);
                         confirmButtonText: 'Cool'
                     })
                     setState(!state)
+                    
                 }
 
             })
@@ -147,7 +147,7 @@ console.log(art);
                                 }}
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="subcategory_Name"
-                                defaultValue={item_name}
+                                defaultValue={subcategory_Name}
                             />
                         </div>
                     </div>
@@ -168,7 +168,7 @@ console.log(art);
                                 }}
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="short_description"
-                                defaultValue={item_name}
+                                defaultValue={short_description}
                             />
                             {/* <Select
                                 size="lg"
@@ -207,7 +207,7 @@ console.log(art);
                                 }}
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="price"
-                                defaultValue={item_name}
+                                defaultValue={price}
                             />
                         </div>
                         <div className="w-full">
@@ -227,7 +227,7 @@ console.log(art);
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="rating"
                                 type="number"
-                                defaultValue={item_name}
+                                defaultValue={rating}
                             />
                         </div>
                     </div>
@@ -248,7 +248,7 @@ console.log(art);
                                 }}
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="customization"
-                                defaultValue={item_name}
+                                defaultValue={customization}
                             />
                         </div>
                         <div className="w-full">
@@ -267,7 +267,7 @@ console.log(art);
                                 }}
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="processing_time"
-                                defaultValue={item_name}
+                                defaultValue={processing_time}
                             />
                         </div>
                     </div>
@@ -288,7 +288,7 @@ console.log(art);
                                 }}
                                 className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                                 name="stockStatus"
-                                defaultValue={item_name}
+                                defaultValue={stockStatus}
                             />
                         </div>
                         <div className="w-full">

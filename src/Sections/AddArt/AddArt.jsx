@@ -35,8 +35,8 @@ const AddArt = () => {
         const customization = e.target.customization.value;
         const processing_time = e.target.processing_time.value;
         const stockStatus = e.target.stockStatus.value;
-        const User_Email = `${user?.email || 'unknown'}`;
-        const User_Name = `${user?.displayName || 'unknown'}`
+        const User_Email = `${ e.target.User_Email.value || user?.email}`;
+        const User_Name = `${e.target.User_Name.value || user?.displayName}`
         const info = {
             image_url,
             item_name,
@@ -149,21 +149,7 @@ const AddArt = () => {
                             className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                             name="short_description"
                         />
-                        {/* <Select
-                                size="lg"
-                                labelProps={{
-                                    className: "hidden",
-                                }}
-                                className="border-t-blue-gray-200 aria-[expanded=true]:border-t-primary"
-                               
-                                value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}
-                            >
-                                <Option value="option1">Option 1</Option>
-                                <Option  value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                <Option value="male">Male</Option>
-                                <Option value="female">Female</Option>
-                            </Select> */}
+                       
                     </div>
 
 
@@ -280,6 +266,46 @@ const AddArt = () => {
                             }}
                             className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                             name="image_url"
+                        />
+                    </div>
+                    
+                </div>
+                <div className="flex flex-col items-end gap-4 md:flex-row mt-6">
+                    <div className="w-full">
+                        <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="mb-2 font-medium"
+                        >
+                            User Name
+                        </Typography>
+                        <Input
+                            size="lg"
+                            placeholder="Name"
+                            labelProps={{
+                                className: "hidden",
+                            }}
+                            className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+                            name="User_Name"
+                        />
+                    </div>
+
+                    <div className="w-full">
+                        <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="mb-2 font-medium"
+                        >
+                            User Email
+                        </Typography>
+                        <Input
+                            size="lg"
+                            placeholder="Email"
+                            labelProps={{
+                                className: "hidden",
+                            }}
+                            className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+                            name="User_Email"
                         />
                     </div>
                 </div>
