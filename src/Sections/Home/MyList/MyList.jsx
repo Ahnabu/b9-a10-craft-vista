@@ -13,12 +13,13 @@ import {
 const MyList = () => {
     const { state,user } = useContext(AuthContext)
     const [arts, setArts] = useState([])
-    const[filter,setFilter] =useState('')
+    const [filter, setFilter] = useState('')
     useEffect(() => {
-        fetch(`http://localhost:5000/myArt/${user?.email}/${filter}`)
+        fetch(`http://localhost:5000/${ filter?`myArt/${user?.email}`:`${user?.email}`}/${filter}`)
             .then(res => res.json())
             .then(data => {
                 setArts(data)
+                console.log(data);
             })
     }, [filter, state, user])
 
