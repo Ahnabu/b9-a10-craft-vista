@@ -81,7 +81,7 @@ const AuthProvider = ({ children }) => {
     }, []);
     const getLoved = () => {
         const storedBooks = localStorage.getItem('love-list');
-        console.log(JSON.parse(storedBooks));
+       
         return (JSON.parse(storedBooks) || [])
     }
 

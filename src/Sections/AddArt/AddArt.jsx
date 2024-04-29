@@ -51,7 +51,7 @@ const AddArt = () => {
             User_Name,
         }
        
-        fetch('http://localhost:5000/addArt', {
+        fetch('https://a10-server-opal.vercel.app/addArt', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

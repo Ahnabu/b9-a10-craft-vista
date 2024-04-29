@@ -18,7 +18,7 @@ const Favorite = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const response = await fetch('http://localhost:5000/arts');
+            const response = await fetch('https://a10-server-opal.vercel.app/arts');
             
             const data = await response.json();
            
@@ -30,11 +30,15 @@ const Favorite = () => {
 
         };
         fetchData();
-    }, [])
+    }, [loved])
 
 
 
-
+    if (arts.length < 1) {
+        return (
+            <h1 className='text-center my-3'>Add to favorite to see here</h1>
+    )
+}
 
 
 
@@ -43,7 +47,7 @@ const Favorite = () => {
         <div className='mt-4'>
             <h1 className='text-3xl text-center my-3'> Your Favorite</h1>
             {
-                arts.map(art => <FavoriteCard key={art._id} art={art}></FavoriteCard>)|| <h1>Add to favorite to see here</h1>
+                arts.map(art => <FavoriteCard key={art._id} art={art}></FavoriteCard>)
             }
 
 

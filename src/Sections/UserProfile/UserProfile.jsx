@@ -10,7 +10,7 @@ const UserProfile = () => {
     const [arts, setArts] = useState([])
     
     useEffect(() => {
-        fetch(`http://localhost:5000/${user?.email}`)
+        fetch(`https://a10-server-opal.vercel.app/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setArts(data)

@@ -15,7 +15,7 @@ const MyList = () => {
     const [arts, setArts] = useState([])
     const [filter, setFilter] = useState('')
     useEffect(() => {
-        fetch(`http://localhost:5000/${ filter?`myArt/${user?.email}`:`${user?.email}`}/${filter}`)
+        fetch(`https://a10-server-opal.vercel.app/${ filter?`myArt/${user?.email}`:`${user?.email}`}/${filter}`)
             .then(res => res.json())
             .then(data => {
                 setArts(data)

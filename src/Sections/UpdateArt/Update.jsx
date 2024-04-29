@@ -26,7 +26,7 @@ const Update = () => {
     const {id} = useParams()
     
     useEffect(() => {
-        fetch(`http://localhost:5000/details/${id}`)
+        fetch(`https://a10-server-opal.vercel.app/details/${id}`)
             .then(res => res.json())
             .then(data => {
                 setArt(data)
@@ -72,7 +72,7 @@ const Update = () => {
             User_Name,
         }
       
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://a10-server-opal.vercel.app/update/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

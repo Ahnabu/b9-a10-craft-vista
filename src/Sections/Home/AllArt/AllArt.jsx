@@ -8,7 +8,7 @@ const AllArt = () => {
     const { state } = useContext(AuthContext)
     const [arts, setArts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/arts')
+        fetch('https://a10-server-opal.vercel.app/arts')
             .then(res => res.json())
             .then(data => {
                 setArts(data)

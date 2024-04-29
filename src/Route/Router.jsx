@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <Details></Details>
                 </PrivetRoute>,
-                loader: ({params}) =>{ return fetch(`http://localhost:5000/details/${params.id}`)}
+                loader: ({params}) =>{ return fetch(`https://a10-server-opal.vercel.app/details/${params.id}`)}
 
             },
             {
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <MyList></MyList>
                 </PrivetRoute>,
-                loader: ({ params }) => () => { return fetch(`http://localhost:5000/myArt/${params.email}`) }
+                loader: ({ params }) => () => { return fetch(`https://a10-server-opal.vercel.app/myArt/${params.email}`) }
 
             },
             {
@@ -86,7 +86,7 @@ export const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <Update></Update>
                 </PrivetRoute>,
-                loader: ({ params }) => () => { return fetch(`http://localhost:5000/update/${params.id}`) }
+                loader: ({ params }) => () => { return fetch(`https://a10-server-opal.vercel.app/update/${params.id}`) }
 
             },
         ]

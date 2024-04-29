@@ -40,7 +40,7 @@ const MyAll = ({ art }) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/delete/${id}`, {
+                fetch(`https://a10-server-opal.vercel.app/delete/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

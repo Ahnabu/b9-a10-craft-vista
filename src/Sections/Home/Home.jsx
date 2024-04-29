@@ -4,23 +4,13 @@ import Slider from "../Header/Slider/Slider";
 import Art from "./Art/Art";
 
 
-
-
-
-
-
-
-
-
-
-
 const Home = () => {
   const{state}=useContext(AuthContext)
     const [arts, setArts] = useState([])
     const [tab, setTab] = useState(0);
     const [link, setLink] = useState('')
     useEffect(() =>{
-        fetch(`http://localhost:5000/${link ? `arts/${link}` : `horairaabu013025@gmail.com`}`)
+        fetch(`https://a10-server-opal.vercel.app/${link ? `arts/${link}` : `horairaabu013025@gmail.com`}`)
             .then(res => res.json())
             .then(data => {
                 setArts(data)
@@ -28,7 +18,7 @@ const Home = () => {
         })
     }, [link, state])
     
- console.log(link);
+
     return (
         
         <div className="h-full relative">
