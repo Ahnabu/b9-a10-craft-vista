@@ -8,7 +8,7 @@ const ToggleText = () => {
 
 return (
     <div className='App'>
-        <h1 style={{ margin: 'auto 0', fontWeight: 'normal' }}>
+        <h1 style={{ margin: 'auto 0', fontWeight: 'normal', fontSize:'18px' }}>
             {' '}
             <span style={{ color: 'gray', fontWeight: 'bold' }}>
                 {/* Style will be inherited from the parent element */}

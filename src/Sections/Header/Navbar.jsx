@@ -117,8 +117,9 @@ export function StickyNavbar() {
                         className="mr-4 cursor-pointer py-1.5 text-3xl font-bold"
                     >
                         CraftVista
+                        <ToggleText></ToggleText>
                     </Typography>
-                    <ToggleText></ToggleText>
+                   
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block text-black">{navList}</div>
                         {user ? <UserProfile></UserProfile> : <div className="flex items-center gap-x-1">
@@ -185,7 +186,7 @@ export function StickyNavbar() {
                                 </svg>
                             )}
                         </IconButton>
-                      <ThemeToggle></ThemeToggle>
+                     <ThemeToggle></ThemeToggle>
                     </div>
                 </div>
                 <MobileNav open={openNav}>

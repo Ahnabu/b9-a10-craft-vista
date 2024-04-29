@@ -12,8 +12,9 @@ import './Slider.css';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-import { Button } from '@material-tailwind/react';
-import { NavLink } from 'react-router-dom';
+// import { Button } from '@material-tailwind/react';
+// import { NavLink } from 'react-router-dom';
+
 
 // import { useLoaderData } from "react-router-dom"
 function Slider() {
@@ -44,9 +45,9 @@ function Slider() {
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
                 className="mySwiper  mt-2 rounded-3xl h-[390px] w-[320px] md:h-[500px] md:w-[720px] lg:h-[600px] lg:w-[1280px] mx-auto overflow-hidden"
             >
+                
 
-
-                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/fGq7p6M/image.png)` }} id="001" className='item-end w-full '>
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/Q97kwfm/image.png)` }} id="001" className='item-end w-full '>
                     {/* <div className='flex flex-col  mx-auto lg:flex-row justify-between w-5/6 ' >
                         <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
                             <h1 className='text-2xl font-semibold'>
@@ -118,7 +119,41 @@ function Slider() {
 
                     </div>
                 </SwiperSlide>
-                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/GnkV4RY/image.png)` }} id="006" className='item-end w-full '>
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/Zc2xqr7/image.png)` }} id="006" className='item-end w-full '>
+                    {/* <div className='flex flex-col  mx-auto lg:flex-row-reverse justify-between w-5/6' >
+                        <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
+                            <h1 className='text-2xl font-semibold'>
+                                Beachfront Vacation
+                            </h1>
+                            <h4>
+
+                                Miami Beach, FL
+                            </h4>
+                            <p>
+                                beachfront rental for the perfect getaway
+                            </p>
+                            <ul className="list-disc p-4">
+                                <li>ocean view</li>
+                                <li>private</li>
+                                <li>terrace</li>
+                            </ul>
+                            <div className='flex flex-row justify-between mt-4'>
+                                <p>
+                                    Price: $300/night
+                                </p>
+                                <p >
+                                    For: Rent
+                                </p>
+                            </div>
+                            <NavLink to={`/card-details/006`}>
+                                <Button size="lg" className=" w-full mt-4  ">View Details
+                                </Button>
+                            </NavLink>
+                        </div>
+
+                    </div> */}
+                </SwiperSlide>
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/724Ybpd/image.png)` }} id="006" className='item-end w-full '>
                     {/* <div className='flex flex-col  mx-auto lg:flex-row-reverse justify-between w-5/6' >
                         <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
                             <h1 className='text-2xl font-semibold'>
@@ -153,14 +188,19 @@ function Slider() {
                     </div> */}
                 </SwiperSlide>
         
-                <div className="autoplay-progress" slot="container-end">
+                <div className="autoplay-progress" slot="container-center">
                     <svg viewBox="0 0 48 48" ref={progressCircle}>
                         <circle cx="24" cy="24" r="20"></circle>
                     </svg>
                     <span ref={progressContent}></span>
+                    
                 </div>
-            </Swiper>
             
+                   
+              
+            </Swiper>
+          
+           
         </>
     );
 }

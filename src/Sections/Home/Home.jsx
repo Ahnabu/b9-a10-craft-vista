@@ -9,6 +9,11 @@ import Art from "./Art/Art";
 
 
 
+
+
+
+
+
 const Home = () => {
   const{state}=useContext(AuthContext)
     const [arts, setArts] = useState([])
@@ -25,11 +30,14 @@ const Home = () => {
  
     return (
         
-        <div className="h-full">
+        <div className="h-full relative">
             <Slider></Slider>
+            
+            
+           
             <h1 className="text-center my-3">Art and Crafts</h1>
             <p className="text-center">Art and craft, though sometimes used interchangeably, differ slightly. Art focuses on expressing ideas and emotions, while crafts prioritize creating functional or decorative objects. Both involve creativity and skill, using a wide range of materials like paint, clay, fabric, or even recycled items!</p>
-            <div className="flex items-center p-3 -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800 mt-6 ">
+            <div className="flex items-center p-3 -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-wrap dark:bg-gray-100 dark:text-gray-800 mt-6 ">
 
                 <p  onClick={() => { setTab(0),setLink('') }}
                     className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab === 0 ? 'border border-b-0 ' : 'border-b'} dark:border-gray-900 border-white  dark:text-gray-600 top-rounded-xl `}>
@@ -71,7 +79,8 @@ const Home = () => {
 
 
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto justify-around gap-5 text-center mt-6">
+          
+            <div className="grid grid-cols-1  lg:grid-cols-3 mx-auto justify-around gap-5 text-center mt-6">
                 {
                     arts.map(art => {
                        

@@ -29,7 +29,7 @@ const Art = ({ art }) => {
     return (
         <div className="mx-auto">
 
-            <Card className="max-w-[24rem]  ">
+            <Card className="max-w-[20rem]  ">
                 <CardHeader
                     floated={false}
                     shadow={false}
@@ -40,7 +40,7 @@ const Art = ({ art }) => {
                         // src={`${image_url}`}
                         style={{ backgroundImage: `url(${image_url})` }}
                         alt=""
-                        className="bg-cover object-cover h-[240px] w-[24rem]"
+                        className="bg-cover object-cover h-[240px] w-[20rem]"
                     />
                 </CardHeader>
                 <CardBody>
