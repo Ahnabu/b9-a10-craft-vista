@@ -41,7 +41,7 @@ const Update = () => {
         customization,
         processing_time,
         stockStatus,
-        
+        _id
     } = art
 
     const handleAdd = e => {
@@ -72,7 +72,7 @@ const Update = () => {
             User_Name,
         }
       
-        fetch('http://localhost:5000/addArt', {
+        fetch(`http://localhost:5000/update/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,11 +81,12 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                
+                if (data.modifiedCount>0) {
 
                     Swal.fire({
                         title: 'Success',
-                        text: 'Successfully added to database',
+                        text: 'Successfully updated to database',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })

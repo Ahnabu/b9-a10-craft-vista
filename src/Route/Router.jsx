@@ -12,6 +12,8 @@ import AllArt from "../Sections/Home/AllArt/AllArt";
 import Details from "../Sections/Home/Details/Details";
 import MyList from "../Sections/Home/MyList/MyList";
 import Update from "../Sections/UpdateArt/Update";
+import UserProfile from "../Sections/UserProfile/UserProfile";
+import Favorite from "../Sections/Favorite/Favorite";
 
 export const router = createBrowserRouter([
     {
@@ -43,9 +45,23 @@ export const router = createBrowserRouter([
 
             },
             {
+                path: "/favorite",
+                element: <PrivetRoute>
+                    <Favorite></Favorite>
+                </PrivetRoute> ,
+
+            },
+            {
                 path: "/allArt",
                 element: <PrivetRoute>
                     <AllArt></AllArt>
+                </PrivetRoute> ,
+
+            },
+            {
+                path: "/user-profile",
+                element: <PrivetRoute>
+                    <UserProfile></UserProfile>
                 </PrivetRoute> ,
 
             },

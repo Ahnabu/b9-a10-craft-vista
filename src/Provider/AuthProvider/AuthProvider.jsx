@@ -7,6 +7,7 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { auth } from "../../firebase/firebase.config";
+import Swal from "sweetalert2";
 export const AuthContext = createContext(null)
 
 
@@ -78,23 +79,29 @@ const AuthProvider = ({ children }) => {
             unSubscribe()
         }
     }, []);
-    const getWishList = () => {
-        const storedBooks = localStorage.getItem('wish-list');
-
+    const getLoved = () => {
+        const storedBooks = localStorage.getItem('love-list');
+        console.log(JSON.parse(storedBooks));
         return (JSON.parse(storedBooks) || [])
     }
 
-    const wishList = id => {
+    const loveList = id => {
 
-        const readBooks = getWishList()
-        const exist = readBooks.find(bookId => bookId == id);
+        const loved = getLoved()
+        const exist = loved.find(Id => Id == id);
         if (!exist) {
-            readBooks.push(id);
-            localStorage.setItem('wish-list', JSON.stringify(readBooks));
-            toast.success('Successfully added to wishlist')
+            loved.push(id);
+            localStorage.setItem('love-list', JSON.stringify(loved));
+            Swal.fire({
+                title: 'Success',
+                text: 'Successfully added to favorite list',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+            toast.success('Love this item? you will find it on favorite section')
         }
         else {
-            localStorage.removeItem('wish-list', JSON.stringify(readBooks))
+            localStorage.removeItem('love-list', JSON.stringify(loved))
         }
     }
 
@@ -108,8 +115,8 @@ const AuthProvider = ({ children }) => {
         LogInEmail,
         ProfileUpdate,
         loading,
-        wishList,
-        getWishList,
+        loveList,
+        getLoved,
         state,
         setState,
 

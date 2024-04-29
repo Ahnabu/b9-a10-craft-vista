@@ -19,7 +19,7 @@ const MyList = () => {
             .then(res => res.json())
             .then(data => {
                 setArts(data)
-                console.log(data);
+                
             })
     }, [filter, state, user])
 

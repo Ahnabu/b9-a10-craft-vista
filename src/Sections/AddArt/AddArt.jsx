@@ -50,7 +50,7 @@ const AddArt = () => {
             User_Email,
             User_Name,
         }
-        console.log(info);
+       
         fetch('http://localhost:5000/addArt', {
             method: 'POST',
             headers: {
@@ -60,7 +60,8 @@ const AddArt = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.updatedId>0) {
+              
+                if (data.insertedId) {
                    
                     Swal.fire({
                         title: 'Success',
