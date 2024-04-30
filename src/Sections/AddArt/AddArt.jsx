@@ -10,7 +10,7 @@ import {
     // Option,
 
 } from "@material-tailwind/react";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 // import { useState } from "react";
 
@@ -19,17 +19,23 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import { Helmet } from "react-helmet";
 // @heroicons/react
-
+import {
+    Menu,
+    MenuHandler,
+    MenuList,
+    MenuItem,
+    
+} from "@material-tailwind/react";
 const AddArt = () => {
     const { user,setState,state } = useContext(AuthContext)
 
-
+const [category, setCategory]=useState()
     const handleAdd = e => {
         e.preventDefault();
         console.log('connected');
         const image_url = e.target.image_url.value;
         const item_name = e.target.item_name.value;
-        const subcategory_Name = e.target.subcategory_Name.value;
+        const subcategory_Name = category;
         const short_description = e.target.short_description.value;
         const price = e.target.price.value;
         const rating = e.target.rating.value;
@@ -125,15 +131,29 @@ const AddArt = () => {
                         >
                             Subcategory name
                         </Typography>
-                        <Input
-                            size="lg"
-                            placeholder="Roberts"
-                            labelProps={{
-                                className: "hidden",
-                            }}
-                            className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
-                            name="subcategory_Name"
-                        />
+                        <div className="text-center border border-gray-400 rounded-md">
+                            <Menu
+                                animate={{
+                                    mount: { y: 0 },
+                                    unmount: { y: 25 },
+                                }}
+
+                            >
+                                <MenuHandler>
+                                    <Button className="bg-gray-200 text-gray-600 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200">{category?`${category}`: 'Subcategory name'}</Button>
+                                </MenuHandler>
+                                <MenuList >
+                                    <MenuItem value={'Card Making'} onClick={() => { setCategory('Card Making') }} >Card Making</MenuItem>
+                                    <MenuItem value={'Scrapbooking'} onClick={() => { setCategory('Scrapbooking') }}>Scrapbooking</MenuItem>
+                                    <MenuItem value={'Paper Quilling & Origami'} onClick={() => { setCategory('Paper Quilling & Origami') }}>Paper Quilling & Origami</MenuItem>
+                                    <MenuItem value={'Glass Painting'} onClick={() => { setCategory('Glass Painting') }}>Glass Painting</MenuItem>
+                                    <MenuItem value={'Lampworking'} onClick={() => { setCategory('Lampworking') }}>Lampworking</MenuItem>
+                                    <MenuItem value={'Glass Dying & Staining'} onClick={() => { setCategory('Glass Dying & Staining') }}>Glass Dying & Staining</MenuItem>
+
+
+                                </MenuList>
+                            </Menu>
+                        </div>
                     </div>
                 </div>
                 <div className="mb-6 flex flex-col gap-4 md:flex-row">
@@ -175,6 +195,7 @@ const AddArt = () => {
                             labelProps={{
                                 className: "hidden",
                             }}
+                            type="number"
                             className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                             name="price"
                         />
@@ -193,6 +214,7 @@ const AddArt = () => {
                             labelProps={{
                                 className: "hidden",
                             }}
+                            type="number"
                             className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
                             name="rating"
                         />

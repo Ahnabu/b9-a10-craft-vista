@@ -78,7 +78,7 @@ const Home = () => {
 
             </div>
             <div className="flex lg:flex-row flex-col gap-2 p-2 lg:p-6">
-                <div className="grid grid-cols-1  lg:grid-cols-2 mx-auto justify-around gap-5 text-center mt-4">
+                <div className="grid grid-cols-1  lg:grid-cols-2 mx-auto justify-around gap-5 text-center mt-4 mb-auto">
                     {
                         arts.map(art => {
 
