@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 import { Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import './table.css'
+import { Helmet } from "react-helmet";
 
 const AllArt = () => {
     const { state } = useContext(AuthContext)
@@ -17,6 +18,9 @@ const AllArt = () => {
     return (
         <div>
             <h1 className="text-center my-2">All Art and Crafts</h1>
+            <Helmet>
+                <title>CraftVista || All Art</title>
+            </Helmet>
             <table className="custom-table">
                 <thead>
                     <tr>

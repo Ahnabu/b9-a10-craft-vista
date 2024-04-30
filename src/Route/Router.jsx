@@ -54,9 +54,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allArt",
-                element: <PrivetRoute>
+                element:
                     <AllArt></AllArt>
-                </PrivetRoute> ,
+                 ,
 
             },
             {

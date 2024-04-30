@@ -1,4 +1,4 @@
-<h1>Type: B9 A10 Type-02 Requirements</h1>
+
 <h1>CraftVista</h1>
 <a href="https://a10-art-craft.web.app/"> click here </a>
 <h3>Subcategory: Paper Crafts & Glass Art</h3>

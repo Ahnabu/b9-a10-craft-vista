@@ -17,6 +17,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 // day picker
 
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet";
 // @heroicons/react
 
 const AddArt = () => {
@@ -81,6 +82,9 @@ const AddArt = () => {
 
     return (
         <section className="px-8 py-20 container mx-auto">
+            <Helmet>
+                <title>CraftVista || Add Art</title>
+            </Helmet>
             <div className="text-center">
                 <Typography variant="h5" color="blue-gray">
                     Add Art

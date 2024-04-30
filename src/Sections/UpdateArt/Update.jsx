@@ -18,6 +18,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 import Swal from 'sweetalert2'
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 // @heroicons/react
 
 const Update = () => {
@@ -99,6 +100,9 @@ const Update = () => {
     return (
         <div>
             <section className="px-8 py-20 container mx-auto">
+                <Helmet>
+                    <title>CraftVista || Update</title>
+                </Helmet>
                 <div className="text-center">
                     <Typography variant="h5" color="blue-gray">
                         Update Art

@@ -4,6 +4,7 @@ import Slider from "../Header/Slider/Slider";
 import Art from "./Art/Art";
 import Best from "./Best/Best";
 import Ideas from "./Ideas/Ideas";
+import { Helmet } from "react-helmet";
 
 
 
@@ -25,6 +26,9 @@ const Home = () => {
     return (
         
         <div className="h-full relative">
+            <Helmet>
+                <title>CraftVista || Home</title>
+            </Helmet>
             <Slider></Slider>
             
             

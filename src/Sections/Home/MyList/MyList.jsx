@@ -9,6 +9,7 @@ import {
     MenuItem,
     Button,
 } from "@material-tailwind/react";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
     const { state,user } = useContext(AuthContext)
@@ -27,6 +28,9 @@ const MyList = () => {
     return (
         <div>
             <h2 className="mt-6 mb-4 text-center text-3xl font-bold">My Art & Crafts</h2>
+            <Helmet>
+                <title>CraftVista || My Art</title>
+            </Helmet>
             <div className="text-center my-3">
                 <Menu
                     animate={{

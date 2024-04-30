@@ -4,6 +4,7 @@ import { FaCircleUser } from "react-icons/fa6";
 import { CiImageOn } from "react-icons/ci";
 
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 const UserProfile = () => {
     
     const { state, user } = useContext(AuthContext)
@@ -19,6 +20,9 @@ const UserProfile = () => {
     }, [state, user])
     return (
         <div className="my-6">
+            <Helmet>
+                <title>CraftVista || User Profile</title>
+            </Helmet>
             <div className="flex flex-col justify-center max-w-xs p-6  rounded-xl sm:px-12 bg-gray-700 mx-auto text-white">
                 {user?.photoURL ? <div className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square bg-no-repeat bg-cover" style={{ backgroundImage: `url(${user.photoURL})` }} ></div> : <FaCircleUser className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />}
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">

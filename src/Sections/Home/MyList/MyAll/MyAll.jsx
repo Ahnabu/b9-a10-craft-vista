@@ -14,6 +14,7 @@ import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../../Provider/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 const MyAll = ({ art }) => {
     const { image_url,
         item_name,
@@ -64,7 +65,9 @@ const MyAll = ({ art }) => {
     }
     return (
         <div className="mx-auto">
-
+            <Helmet>
+                <title>CraftVista || All Art</title>
+            </Helmet>
             <Card className="max-w-[24rem]  ">
                 <CardHeader
                     floated={false}

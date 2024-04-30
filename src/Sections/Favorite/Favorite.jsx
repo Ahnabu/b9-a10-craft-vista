@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 
 import FavoriteCard from './FavoriteCard/FavoriteCard';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet';
 // ..
 AOS.init();
 const Favorite = () => {
@@ -46,6 +47,9 @@ const Favorite = () => {
 
         <div className='mt-4'>
             <h1 className='text-3xl text-center my-3'> Your Favorite</h1>
+            <Helmet>
+                <title>CraftVista || Favorite</title>
+            </Helmet>
             {
                 arts.map(art => <FavoriteCard key={art._id} art={art}></FavoriteCard>)
             }
