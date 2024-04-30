@@ -6,11 +6,16 @@
 .custom-table th,
 .custom-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 4px;
     text-align: left;
 }
 
 .custom-table th {
     background-color: #f2f2f2;
     color: darkgray;
+}
+@media only screen and (max-width: 600px) {
+    .hide{
+        display: none;
+    }
 }
