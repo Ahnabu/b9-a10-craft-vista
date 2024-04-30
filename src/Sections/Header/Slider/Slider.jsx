@@ -31,7 +31,7 @@ function Slider() {
         <>
 
             <Swiper
-                spaceBetween={30}
+                spaceBetween={0}
                 centeredSlides={true}
                 autoplay={{
                     delay: 4000,
@@ -43,149 +43,26 @@ function Slider() {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper  mt-2 rounded-3xl h-[390px] w-[320px] md:h-[500px] md:w-[720px] lg:h-[600px] lg:w-[1280px] mx-auto overflow-hidden"
+                className="mySwiper  mt-2 rounded-3xl h-[390px] w-[310px] md:h-[500px] md:w-[720px] lg:h-[600px] lg:w-[1280px] mx-auto overflow-hidden"
             >
                 
 
-                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/Q97kwfm/image.png)` }} id="001" className='item-end w-full '>
-                    {/* <div className='flex flex-col  mx-auto lg:flex-row justify-between w-5/6 ' >
-                        <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
-                            <h1 className='text-2xl font-semibold'>
-                                Modern Apartment
-                            </h1>
-                            <h4>
-
-                                Los Angeles, CA
-                            </h4>
-                            <p>
-                                Contemporary apartment in a prime location
-                            </p>
-                            <ul className="list-disc p-4">
-                                <li>living room</li>
-                                <li>swimming</li>
-                                <li>kitchen</li>
-                            </ul>
-                            <div className='flex flex-row justify-between mt-4'>
-                                <p>
-                                    Price: $1,500,000
-                                </p>
-                                <p >
-                                    For: Sale
-                                </p>
-                            </div>
-
-                            <NavLink to={`/card-details/001`}>
-                                <Button size="lg" className=" w-full mt-4 ">View Details
-                                </Button>
-                            </NavLink>
-                        </div>
-
-                    </div> */}
-
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/LZkFQyf/image.png)` }} id="001" className='item-end  '>
+               
 
                 </SwiperSlide>
                 
-                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/kmf1jKw/image.png)` }} id="006" className='item-end w-full '>
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/b1z4rwt/image.png)` }} id="002" className='item-end  '>
                     <div className='flex flex-col  mx-auto lg:flex-row-reverse justify-between w-5/6' >
-                        {/* <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
-                            <h1 className='text-2xl font-semibold'>
-                                Beachfront Vacation
-                            </h1>
-                            <h4>
-
-                                Miami Beach, FL
-                            </h4>
-                            <p>
-                                beachfront rental for the perfect getaway
-                            </p>
-                            <ul className="list-disc p-4">
-                                <li>ocean view</li>
-                                <li>private</li>
-                                <li>terrace</li>
-                            </ul>
-                            <div className='flex flex-row justify-between mt-4'>
-                                <p>
-                                    Price: $300/night
-                                </p>
-                                <p >
-                                    For: Rent
-                                </p>
-                            </div>
-                            <NavLink to={`/card-details/006`}>
-                                <Button size="lg" className=" w-full mt-4  ">View Details
-                                </Button>
-                            </NavLink>
-                        </div> */}
+                   
 
                     </div>
                 </SwiperSlide>
-                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/Zc2xqr7/image.png)` }} id="006" className='item-end w-full '>
-                    {/* <div className='flex flex-col  mx-auto lg:flex-row-reverse justify-between w-5/6' >
-                        <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
-                            <h1 className='text-2xl font-semibold'>
-                                Beachfront Vacation
-                            </h1>
-                            <h4>
-
-                                Miami Beach, FL
-                            </h4>
-                            <p>
-                                beachfront rental for the perfect getaway
-                            </p>
-                            <ul className="list-disc p-4">
-                                <li>ocean view</li>
-                                <li>private</li>
-                                <li>terrace</li>
-                            </ul>
-                            <div className='flex flex-row justify-between mt-4'>
-                                <p>
-                                    Price: $300/night
-                                </p>
-                                <p >
-                                    For: Rent
-                                </p>
-                            </div>
-                            <NavLink to={`/card-details/006`}>
-                                <Button size="lg" className=" w-full mt-4  ">View Details
-                                </Button>
-                            </NavLink>
-                        </div>
-
-                    </div> */}
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/Zc2xqr7/image.png)` }} id="003" className='item-end  '>
+                   
                 </SwiperSlide>
-                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/724Ybpd/image.png)` }} id="006" className='item-end w-full '>
-                    {/* <div className='flex flex-col  mx-auto lg:flex-row-reverse justify-between w-5/6' >
-                        <div className=' bg-[#ffffffcc] bg-blur  w-80 p-4 text-start rounded-lg border border-black h-96'>
-                            <h1 className='text-2xl font-semibold'>
-                                Beachfront Vacation
-                            </h1>
-                            <h4>
-
-                                Miami Beach, FL
-                            </h4>
-                            <p>
-                                beachfront rental for the perfect getaway
-                            </p>
-                            <ul className="list-disc p-4">
-                                <li>ocean view</li>
-                                <li>private</li>
-                                <li>terrace</li>
-                            </ul>
-                            <div className='flex flex-row justify-between mt-4'>
-                                <p>
-                                    Price: $300/night
-                                </p>
-                                <p >
-                                    For: Rent
-                                </p>
-                            </div>
-                            <NavLink to={`/card-details/006`}>
-                                <Button size="lg" className=" w-full mt-4  ">View Details
-                                </Button>
-                            </NavLink>
-                        </div>
-
-                    </div> */}
+                <SwiperSlide style={{ backgroundImage: `url(https://i.ibb.co/724Ybpd/image.png)` }} id="004" className='item-end  '>
+                 
                 </SwiperSlide>
         
                 <div className="autoplay-progress" slot="container-center">

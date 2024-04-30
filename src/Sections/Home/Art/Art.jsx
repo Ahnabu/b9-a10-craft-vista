@@ -16,7 +16,7 @@ import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
-const Art = ({ art }) => {
+const Art = ({ art,link }) => {
     const { image_url,
         item_name,
         subcategory_Name,
@@ -75,7 +75,7 @@ const Art = ({ art }) => {
                     
                 </CardFooter>
                 <div className="my-2 flex justify-between m-3">
-                    <Link to={`/details/${_id}`}><Button>View Details</Button> </Link>
+                    <Link to={`${link ?`/details/subcategory/${_id}`: `/details/${_id}`}`}><Button>View Details</Button> </Link>
                     <Tooltip content={`Click to add it on favorite section`}>
                     <div className="flex flex-col">
                         <IconButton

@@ -19,7 +19,7 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="inline-flex items-center rounded-full p-2 text-white bg-gray-900 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white dark:bg-white dark:text-black dark:hover:bg-opacity-10"
+            className="inline-flex items-center rounded-full p-1 md:p-2 text-white bg-gray-900 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white dark:bg-white dark:text-black dark:hover:bg-opacity-10"
         >
             {isDarkMode ? (
                 <svg

@@ -110,11 +110,11 @@ export function StickyNavbar() {
 
     return (
         <div className=" w-[calc(100%-10px)] m-auto ">
-            <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+            <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-2 md:px-4 py-2 lg:px-8 lg:py-4">
                 <div className="flex items-center justify-between text-black">
                     <Typography
 
-                        className="mr-4 cursor-pointer py-1.5 text-3xl font-bold"
+                        className="mr-2 md:mr-4 cursor-pointer py-1.5 text-3xl font-bold"
                     >
                         CraftVista
                         <ToggleText></ToggleText>

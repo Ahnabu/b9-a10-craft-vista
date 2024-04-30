@@ -2,6 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import Slider from "../Header/Slider/Slider";
 import Art from "./Art/Art";
+import Best from "./Best/Best";
+import Ideas from "./Ideas/Ideas";
+
 
 
 const Home = () => {
@@ -70,17 +73,24 @@ const Home = () => {
 
 
             </div>
-          
-            <div className="grid grid-cols-1  lg:grid-cols-3 mx-auto justify-around gap-5 text-center mt-6">
-                {
-                    arts.map(art => {
-                       
-                        return (<Art art={art} key={art._id}></Art>)
-                    })
-                }
-              
+            <div className="flex lg:flex-row flex-col gap-2 p-2 lg:p-6">
+                <div className="grid grid-cols-1  lg:grid-cols-2 mx-auto justify-around gap-5 text-center mt-4">
+                    {
+                        arts.map(art => {
+
+                            return (<Art art={art} link={link} key={art._id}></Art>)
+                        })
+                    }
+
+                </div>
+                <div>
+                    <Best></Best>
+                    <Ideas></Ideas>
+                </div>
+                
             </div>
-           
+          
+      
             
         </div>
     );

@@ -14,6 +14,7 @@ import MyList from "../Sections/Home/MyList/MyList";
 import Update from "../Sections/UpdateArt/Update";
 import UserProfile from "../Sections/UserProfile/UserProfile";
 import Favorite from "../Sections/Favorite/Favorite";
+import SubDetails from "../Sections/Home/Details/SubDetails/SubDetails";
 
 export const router = createBrowserRouter([
     {
@@ -71,6 +72,14 @@ export const router = createBrowserRouter([
                     <Details></Details>
                 </PrivetRoute>,
                 loader: ({params}) =>{ return fetch(`https://a10-server-opal.vercel.app/details/${params.id}`)}
+
+            },
+            {
+                path: "/details/subcategory/:id",
+                element: <PrivetRoute>
+                    <SubDetails></SubDetails>
+                </PrivetRoute>,
+                loader: ({ params }) => { return fetch(`https://a10-server-opal.vercel.app/details/subcategory/${params.id}`)}
 
             },
             {
