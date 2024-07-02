@@ -13,3 +13,11 @@
 <h5>Packages </h5>
 <a href="">React-simple-Typewriter</a>
 <a href="">Lottie React </a>
+<h5>If you want to run on your local machine , then</h5>
+<ul>
+<li>clone this repo.</li>
+<li>install the dependency by npm i .</li>
+<li>set firebase config .</li>
+<li>run this with npm run dev .</li>
+  
+</ul>
